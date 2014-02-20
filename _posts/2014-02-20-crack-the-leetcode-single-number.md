@@ -39,6 +39,26 @@ public int singleNumber(int[] A) {
 {% endhighlight %}
 
 **Solution 1**:  
+Beyond counting, we can also use toggle switch like method. All we need is a data structure that can find a object using O(1) time, so the Set become a perfect option.  
+*(Here is a potential problem: we need to be sure Set's find method has less than O(n) time complexity. But now I'm not sure about this in TreeSet.)*  
+*Time Complexity*:O(n)  
+*Space Complexity*:O(n)  
+
+{% highlight java %}
+public int singleNumber(int[] A) {
+    TreeSet<Integer> s = new TreeSet<Integer>();
+    for (int i : A) {
+        if (s.contains(i)) {
+            s.remove(i);
+        } else {
+            s.add(i);
+        }
+    }
+    return s.first();
+}
+{% endhighlight %}
+
+**Solution 2**:  
 Notice the word 'twice'. It is easy to remember the XOR, which has the features that A XOR A = 0, A XOR 0 = A. Whenever meeting the word 'twice', it's worth to give XOR a try. In this problem, you can simply XOR all the numbers, and the result is exactly the single one you want.  
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
