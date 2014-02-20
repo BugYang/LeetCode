@@ -12,9 +12,9 @@ title: Crack the LeetCode - Same Tree
 Given two binary trees, write a function to check if they are equal or not.
 
 **Example**:  
-INPUT: {} {1, 2} 
+INPUT: {} {1, 2}  
 OUTPUT: false  
-INPUT: {1, 2} {1, 2}
+INPUT: {1, 2} {1, 2}  
 OUTPUT: true
 
 **Solution 0**:  
