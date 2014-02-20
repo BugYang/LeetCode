@@ -37,14 +37,9 @@ public class Solution {
         if (root == null) {
             return 0;
         }
-        int leftDepth = 0, rightDepth = 0;
-        if (root.left != null) {
-            leftDepth = maxDepth(root.left);
-        }
-        if (root.right != null) {
-            rightDepth = maxDepth(root.right);
-        }
 
+        int leftDepth = maxDepth(root.left);
+        int rightDepth = maxDepth(root.right);
         return 1 + (leftDepth > rightDepth ? leftDepth : rightDepth);
     }
 }
