@@ -1,0 +1,31 @@
+---
+layout: post
+title: Crack the LeetCode - Single Number
+---
+
+{{ page.title }}
+================
+
+<p class="meta">20 February 2014 - Shanghai </p>
+
+Problem:
+Given an array of int, within which every element appears twice except for one, your task is to find that single one.
+
+Example: 
+INPUT: 1,1,2,2,3
+OUTPUT: 3
+
+Solution:
+Notice the word 'twice'. It is easy to remember the XOR, which has the features that A XOR A = 0, A XOR 0 = A. Whenever meeting the word 'twice', it's worth to give XOR a try. In this problem, you can simply XOR all the numbers, and the result is exactly the single one you want.
+
+Code:
+{% highlight java %}
+public class Solution {
+    public int singleNumber(int[] A) {
+        int result = A[0];
+        for (int i = 1; i < A.length; i++)
+            result ^= A[i];
+        return result;
+    }
+}
+{% endhighlight %}
