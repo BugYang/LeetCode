@@ -9,7 +9,7 @@ title: Crack the LeetCode - Maximum Depth of Binary Tree
 <p class="meta">20 February 2014 - Shanghai </p>
 
 **Problem**:  
-Given a binary tree, find its depth.
+Given a binary tree, find its maximum depth.
 
 **Example**:  
 INPUT: {}  
