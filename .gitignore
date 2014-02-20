@@ -1,4 +1,6 @@
 *.class
+/_site/
+/site/
 
 # Package Files #
 *.jar

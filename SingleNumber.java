@@ -1,10 +1,12 @@
 import java.util.HashMap;
+import java.util.TreeSet;
 
 public class SingleNumber {
     public static int singleNumber_XOR(int[] A) {
-        int result = A[0];
-        for (int i = 1; i < A.length; i++)
-            result ^= A[i];
+        int result = 0;
+        for (int i : A) {
+            result ^= i;
+        }
         return result;
     }
 
@@ -25,8 +27,22 @@ public class SingleNumber {
         return A[i];
     }
 
+    public static int singleNumber_Set(int[] A) {
+        TreeSet<Integer> s = new TreeSet<Integer>();
+        for (int i : A) {
+            if (s.contains(i)) {
+                s.remove(i);
+            } else {
+                s.add(i);
+            }
+        }
+        return s.first();
+    }
+
     public static void main(String[] args) {
         int[] A = {1, 1, 2, 2, 3};
+        System.out.println("" + SingleNumber.singleNumber_XOR(A));
         System.out.println("" + SingleNumber.singleNumber_HashMap(A));
+        System.out.println("" + SingleNumber.singleNumber_Set(A));
     }
 }
