@@ -25,16 +25,14 @@ public class Solution {
 
     public boolean hasCycle_Floyd(ListNode head) {
         ListNode tortoise = head, hare = head;
-        do {
-            hare = hare == null ? null : hare.next;
-            hare = hare == null ? null : hare.next;
-            if (hare == null) {
-                return false;
-            }
+        while (hare != null && hare.next != null) {
             tortoise = tortoise.next;
-
-        } while (tortoise != hare);
-        return true;
+            hare = hare.next.next;
+            if (tortoise == hare) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
