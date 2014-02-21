@@ -22,4 +22,19 @@ public class Solution {
         }
         return false;
     }
+
+    public boolean hasCycle_Floyd(ListNode head) {
+        ListNode tortoise = head, hare = head;
+        do {
+            hare = hare == null ? null : hare.next;
+            hare = hare == null ? null : hare.next;
+            if (hare == null) {
+                return false;
+            }
+            tortoise = tortoise.next;
+
+        } while (tortoise != hare);
+        return true;
+    }
+
 }
