@@ -20,7 +20,7 @@ INPUT: [1,3,5,6] 0
 OUTPUT: 0   
 
 **Solution 0**:  
-You can simply find the right position by traverse the array...
+You can simply find the right position by traverse the array...   
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 
