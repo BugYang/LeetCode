@@ -22,7 +22,7 @@ public class Solution {
             result = 1;
         } else {
             for (int i = 0; i < n; i++) {
-                result += numTrees(i) * numTrees(n-1-i);
+                result += numTrees_recur(i) * numTrees_recur(n-1-i);
             }
         }
         return result;
