@@ -22,4 +22,28 @@ public class Solution {
 
         return result;
     }
+
+    public ArrayList<Integer> inorderTraversal_Iter(TreeNode root) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        if (root == null) {
+            return result;
+        }
+
+        do {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+
+            do {
+                root = stack.pop();
+                result.add(root.val);
+            } while (root.right == null && stack.empty() == false);
+
+            root = root.right;
+        } while (root != null);
+
+        return result;
+    }
 }
