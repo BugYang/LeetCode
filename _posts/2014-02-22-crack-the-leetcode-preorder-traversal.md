@@ -12,12 +12,7 @@ title: Crack the LeetCode - Binary Tree Preorder Traversal
 Given a binary tree, return the preorder traversal of its nodes' values.
 
 **Example**:  
-INPUT:   
-1   
- \    
-  2   
- /   
-3    
+INPUT: {1,#,2,3,#}  
 OUTPUT:  [1, 2, 3]
 
 **Solution 0**:  

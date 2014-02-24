@@ -12,18 +12,8 @@ title: Crack the LeetCode - Populating Next Right Pointers in Each Node
 Given a perfect binary tree (each node contains left, right and next pointer), populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL. Initially, all next pointers are set to NULL. You may only use constand extra space.
 
 **Example**:  
-INPUT:   
-    1    
-   / \    
-  2   3    
- / \ / \    
- 4 5 6 7    
-OUTPUT:   
-    1-NULL      
-   / \    
-  2 - 3-NULL    
- / \ / \    
- 4-5-6-7-NULL    
+INPUT: {1,2,3,4,5,6,7}   
+OUTPUT: {1-null,2-3,3-null,4-5,5-6,6-7,7-null}  
 
 **Solution 0**:  
 Since I couldn't figure out the solution at first, I find an usable article and give its link here: http://leetcode.com/2010/03/first-on-site-technical-interview.html  
