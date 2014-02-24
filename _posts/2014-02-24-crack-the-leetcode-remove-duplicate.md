@@ -18,7 +18,7 @@ INPUT: 1->1->2->3->3
 OUTPUT: 1->2->3  
 
 **Solution 0**:  
-The solution is obvious. You can just traverse the list and change the next pointer if node's next is a duplicate.
+The solution is obvious. You can just traverse the list and change the next pointer if node's next is a duplicate.  
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 
