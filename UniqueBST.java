@@ -2,14 +2,11 @@ public class Solution {
 
     public int numTrees_iter(int n) {
         int[] result = new int[n + 1];
-        for (int i = 0; i <= n; i++) {
-            if (i <= 1) {
-                result[i] = 1;
-            } else {
-                result[i] = 0;
-                for (int j = 0; j < i; j++) {
-                    result[i] += result[j] * result[i-1-j];
-                }
+        result[0] = 1;
+        for (int i = 1; i <= n; i++) {
+            result[i] = 0;
+            for (int j = 0; j < i; j++) {
+                result[i] += result[j] * result[i-1-j];
             }
         }
         return result[n];
