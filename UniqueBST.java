@@ -4,7 +4,6 @@ public class Solution {
         int[] result = new int[n + 1];
         result[0] = 1;
         for (int i = 1; i <= n; i++) {
-            result[i] = 0;
             for (int j = 0; j < i; j++) {
                 result[i] += result[j] * result[i-1-j];
             }
