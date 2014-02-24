@@ -27,4 +27,12 @@ public class Solution {
         }
         return result;
     }
+
+    public int numTrees_catalan(int n) {
+        int result = 1;
+        for (int i = 2; i <= n; i++) {
+            result = result * (4*i-2) / (i+1);
+        }
+        return result;
+    }
 }
