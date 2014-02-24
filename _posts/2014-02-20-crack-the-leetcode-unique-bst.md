@@ -56,3 +56,18 @@ public int numTrees(int n) {
 }
 {% endhighlight %}
 
+**Solution 2**:  
+A better solution need to use some math knowledge: Catalan number. Catalan number means an sequence, in which F(0) = 1 and F(n) = F(0) * F(n-1) + F(1) * F(n-2) + ... + F(n-1) * F(0). It has a simpler formula: F(n) = F(n-1) * ((4n-2)/(n+1)), by which we could get a perfect solution.  
+*Time Complexity*:O(n)  
+*Space Complexity*:O(1)  
+
+{% highlight java %}
+public int numTrees(int n) {
+    int result = 1;
+    for (int i = 2; i <= n; i++) {
+        result = result * (4*i-2) / (i+1);
+    }
+    return result;
+}
+{% endhighlight %}
+
