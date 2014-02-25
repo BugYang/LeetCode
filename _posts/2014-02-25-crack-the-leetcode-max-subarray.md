@@ -16,10 +16,10 @@ INPUT: [-2,1,-3,4,-1,2,1,-5,4]
 OUTPUT: 6 (sum of [4,-1,2,1]) 
 
 **NOTE**:  
-Actually, I've met this problem before and failed to give a solution. Then I found [this slides](http://www.cse.ust.hk/faculty/golin/COMP271Sp03/Notes/L02.pdf) really useful. Only after learning this slides I could give the following solutions. 
+Actually, I've met this problem before and failed to give a solution. Then I found [this slides](http://www.cse.ust.hk/faculty/golin/COMP271Sp03/Notes/L02.pdf) really useful. 
 
 **Solution 0**:  
-The first solution I give is a O(n) algorithm. Even the idea is straightfoward: just traverse the array, keep the largest and least T and find the max Tmax-Tmin, which is the final solution, there is a tricky point. The algorithm is iterative, and each iteration need a base iteration. So you have to handle the first iteration manually, which means you initialize T, Tmin, Tmax approperly.
+The first solution is the O(n) algorithm in the slides. Even the idea is straightfoward: just traverse the array, keep the max_sum_ending_here by keeping Tmax and Tmin and find the max_sum_so_far, which is the final solution, there is a tricky point. The algorithm is iterative, and each iteration need a base iteration. So you have to handle the first iteration manually, which means you initialize T, Tmin, Tmax approperly.
 
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
@@ -31,6 +31,23 @@ public int maxSubArray(int[] A) {
         T += A[i];
         max = T-minT > max ? T-minT : max;
         minT = T < minT ? T : minT;
+    }
+    return max;
+}
+{% endhighlight %}
+
+**Solution 1**:  
+The second solution is another O(n) algorithm similar with the last one. The only difference is how to keep the max_sum_ending_here. Assuming you have the max_sum ending in A[n-1], you can easily get max_sum ending in A[n]. But you still should take care of the tricky point above.  
+
+*Time Complexity*:O(n)  
+*Space Complexity*:O(1)  
+
+{% highlight java %}  
+public int maxSubArray(int[] A) {
+    int sum = A[0], max = A[0];
+    for (int i = 1;i < A.length; i++) {
+        sum = A[i] + (sum < 0 ? 0 : sum);
+        max = sum > max ? sum : max;
     }
     return max;
 }
