@@ -17,4 +17,28 @@ public class Solution {
         }
         return max;
     }
+
+    public int maxSubArray_recur(int[] A) {
+        if (A.length == 1) {
+            return A[0];
+        }
+
+        int div = A.length/2;
+        int lMax = maxSubArray_recur(Arrays.copyOfRange(A, 0, div));
+        int rMax = div+1 < A.length ? maxSubArray_recur(Arrays.copyOfRange(A, div+1, A.length)) : lMax;
+        int mMax = A[div];
+        int sum = 0;
+        for (int i = div; i >= 0; i--) {
+            sum += A[i];
+            mMax = Math.max(sum, mMax);
+        }
+        sum = mMax;
+        for (int i = div + 1; i < A.length; i++) {
+            sum += A[i];
+            mMax = Math.max(sum, mMax);
+        }
+
+        return Math.max(Math.max(lMax, rMax), mMax);
+    }
+
 }
