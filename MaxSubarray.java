@@ -8,4 +8,13 @@ public class Solution {
         }
         return max;
     }
+
+    public int maxSubArray_yet_another_On(int[] A) {
+        int sum = A[0], max = A[0];
+        for (int i = 1;i < A.length; i++) {
+            sum = A[i] + (sum < 0 ? 0 : sum);
+            max = sum > max ? sum : max;
+        }
+        return max;
+    }
 }
