@@ -24,15 +24,13 @@ The key point is to break F(n) to F(n-1)+F(n-2). That is, if you choose 1 step a
 *Space Complexity*:O(1)  
 
 {% highlight java %}  
-public int removeElement(int[] A, int elem) {
-    int len = A.length;
-    for (int i = 0; i < len; i++) {
-        if (A[i] == elem) {
-            int t = A[i];
-            A[i--] = A[--len];
-            A[len] = t;
-        }
+public int climbStairs(int n) {
+    int a = 1, b = 1, result = 1;
+    for (int i = 2; i <= n; i++) {
+        result = a+b;
+        a = b;
+        b = result;
     }
-    return len;
+    return result;
 }
 {% endhighlight %}
