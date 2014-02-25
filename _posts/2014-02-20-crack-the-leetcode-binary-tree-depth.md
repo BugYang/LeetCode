@@ -18,7 +18,8 @@ INPUT: {1, #, 2}
 OUTPUT: 2
 
 **Solution 0**:  
-It is a very easy problem since we can simply use recursive function to solve it. The only pitfall is that you may forget to consider the input node is null.  
+It is a very easy problem since we can simply use recursive function to solve it. The only pitfall is that you may forget to consider the input node is null.
+
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 

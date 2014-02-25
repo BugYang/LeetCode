@@ -17,6 +17,7 @@ OUTPUT: {1,2,5}
 
 **Solution 0**:  
 The solution is obvious. You can just traverse the array, and swap the element to the tail if the given element found.  
+
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 

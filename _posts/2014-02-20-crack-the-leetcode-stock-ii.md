@@ -19,6 +19,7 @@ OUTPUT: 4
 
 **Solution 0**:  
 After understanding the problem, the solution is obvious. I don't understand why there is such an easy problem.  
+
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 

@@ -17,6 +17,7 @@ OUTPUT:  [1, 2, 3]
 
 **Solution 0**:  
 It's easy to think of the recursive solution.    
+
 *Time Complexity*:O(V)  
 *Space Complexity*:O(V)  
 
@@ -39,6 +40,7 @@ public ArrayList<Integer> preorderTraversal(TreeNode root) {
 
 **Solution 1**:  
 To make it interesting, we can try to find a iterative solution. Since we can solve it recursively, we can use stack to simulate the recursion.  
+
 *Time Complexity*:O(V)  
 *Space Complexity*:O(V)  
 

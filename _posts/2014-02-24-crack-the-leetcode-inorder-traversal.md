@@ -17,6 +17,7 @@ OUTPUT:  [1,3,2]
 
 **Solution 0**:  
 It's easy to think of the recursive solution.    
+
 *Time Complexity*:O(V)  
 *Space Complexity*:O(V)  
 
@@ -40,6 +41,7 @@ public ArrayList<Integer> inorderTraversal(TreeNode root) {
 
 **Solution 1**:  
 But a non-recursive solution is not that easy, and I failed to think up the solution at first. Only after reading some articles, I got the idea. Beginning from the root, we shouldn't visit it now but push it into stack, and then we move to its left child. We continue to do that until we meet null. Then we pop the nodes that have no right child in the stack until any node has right child. Then we restart the whole process from this node.  
+
 *Time Complexity*:O(V)  
 *Space Complexity*:O(V)  
 

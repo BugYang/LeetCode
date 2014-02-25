@@ -16,7 +16,8 @@ INPUT: 1,1,2,2,3
 OUTPUT: 3
 
 **Solution 0**:  
-The most simple solution is very straightfoward, just to count all the elements and then find the single one. This kind of counting need to use HashMap.  
+The most simple solution is very straightfoward, just to count all the elements and then find the single one. This kind of counting need to use HashMap.
+
 *Time Complexity*:O(n)  
 *Space Complexity*:O(n)  
 
@@ -41,6 +42,7 @@ public int singleNumber(int[] A) {
 **Solution 1**:  
 Beyond counting, we can also use toggle switch like method. All we need is a data structure that can find a object using O(1) time, so the Set become a perfect option.  
 *(Here is a potential problem: we need to be sure Set's find method has less than O(n) time complexity. But now I'm not sure about this in TreeSet.)*  
+
 *Time Complexity*:O(n)  
 *Space Complexity*:O(n)  
 
@@ -60,6 +62,7 @@ public int singleNumber(int[] A) {
 
 **Solution 2**:  
 Notice the word 'twice'. It is easy to remember the XOR, which has the features that A XOR A = 0, A XOR 0 = A. Whenever meeting the word 'twice', it's worth to give XOR a try. In this problem, you can simply XOR all the numbers, and the result is exactly the single one you want.  
+
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 

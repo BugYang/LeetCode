@@ -20,6 +20,7 @@ OUTPUT: 3
 
 **Solution 0**:  
 The key point is to break F(n) to F(n-1)+F(n-2). That is, if you choose 1 step at first, you have F(n-1) choices then, or if you choose 2 steps at first, you have F(n-2) choices. Then you can find the solution is elements in Fibonacci sequences.  
+
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 

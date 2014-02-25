@@ -16,7 +16,8 @@ INPUT: {1,2,3,4,5,6,7}
 OUTPUT: {1-null,2-3,3-null,4-5,5-6,6-7,7-null}  
 
 **Solution 0**:  
-Since I couldn't figure out the solution at first, I find an usable article and give its link here: http://leetcode.com/2010/03/first-on-site-technical-interview.html  
+Since I couldn't figure out the solution at first, I find [an usable article](http://leetcode.com/2010/03/first-on-site-technical-interview.html) and get the idea after reading it.   
+
 *Time Complexity*:O(V)  
 *Space Complexity*:O(1)  
 

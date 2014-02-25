@@ -19,6 +19,7 @@ OUTPUT: true
 
 **Solution 0**:  
 This problem is similar with the last one, maximum binary tree depth. So we could still use recursive function to solve it.  
+
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 
