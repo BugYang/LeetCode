@@ -52,3 +52,34 @@ public int maxSubArray(int[] A) {
     return max;
 }
 {% endhighlight %}
+
+**Solution 2**:  
+The recursive solution is well explained in the slides above, so I only paste my code here.
+
+*Time Complexity*:O(nlogn)  
+*Space Complexity*:O(1)  
+
+{% highlight java %}  
+public int maxSubArray(int[] A) {
+    if (A.length == 1) {
+        return A[0];
+    }
+
+    int div = A.length/2;
+    int lMax = maxSubArray(Arrays.copyOfRange(A, 0, div));
+    int rMax = div+1 < A.length ? maxSubArray(Arrays.copyOfRange(A, div+1, A.length)) : lMax;
+    int mMax = A[div];
+    int sum = 0;
+    for (int i = div; i >= 0; i--) {
+        sum += A[i];
+        mMax = Math.max(sum, mMax);
+    }
+    sum = mMax;
+    for (int i = div + 1; i < A.length; i++) {
+        sum += A[i];
+        mMax = Math.max(sum, mMax);
+    }
+
+    return Math.max(Math.max(lMax, rMax), mMax);
+}
+{% endhighlight %}
