@@ -4,20 +4,17 @@ public class Solution {
 
     public int romanToInt(String s) {
         int result = 0, len = s.length();
-        int last = dec[digit.indexOf(s.charAt(0))], cur;
-        int accumu = last;
 
-        for (int i = 1; i < len; i++) {
-            cur = dec[digit.indexOf(s.charAt(i))];
-            if (last == cur) {
-                accumu += cur;
+        for (int i = 0; i < len; i++) {
+            int cur = dec[digit.indexOf(s.charAt(i))];
+            int next = i+1 < len ? dec[digit.indexOf(s.charAt(i+1))] : cur;
+            if (cur < next) {
+                result += next-cur;
+                i++;
             } else {
-                result += last < cur ? cur-accumu : accumu;
-                accumu = last < cur ? 0 : cur;
+                result += cur;
             }
-            last = cur;
         }
-        result += accumu;
 
         return result;
     }
