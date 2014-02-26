@@ -12,7 +12,7 @@ title: Crack the LeetCode - Convert Sorted Array to Binary Search Tree
 Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
 
 **Example**:    
-INPUT: [1,2,3,4]
+INPUT: [1,2,3,4]  
 OUTPUT: {2,1,3,#,#,#,4}
 
 **Solution 0**:  
