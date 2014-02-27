@@ -4,11 +4,10 @@ public class Solution {
             return 0;
         }
 
-        int len = 1, last = A[0];
+        int len = 1;
         for (int i = 1; i < A.length; i++) {
-            if (A[i] != last) {
+            if (A[i] != A[len-1]) {
                 A[len++] = A[i];
-                last = A[i];
             }
         }
 
