@@ -1,5 +1,5 @@
 public class Solution {
-    public int singleNumber(int[] A) {
+    public int singleNumber_On(int[] A) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int i;
         for (i = 0; i < A.length; i++) {
@@ -13,5 +13,20 @@ public class Solution {
 
         }
         return A[i];
+    }
+
+    public int singleNumber_O1(int[] A) {
+        int result = 0;
+        int[] bits = new int[32];
+        for (int i : A) {
+            for (int j = 0; j < 32; j++) {
+                bits[j] += (result>>j & 1) + (i>>j & 1);
+            }
+        }
+
+        for (int i = 0; i < 32; i++) {
+            result += bits[i]%3 << i;
+        }
+        return result;
     }
 }
