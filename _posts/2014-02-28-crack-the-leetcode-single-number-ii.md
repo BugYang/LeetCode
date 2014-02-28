@@ -12,13 +12,13 @@ title: Crack the LeetCode - Single Number II
 Given an array of integers, every element appears three times except for one. Find that single one.
 
 **Example**:    
-INPUT: {1,1,1,2}
+INPUT: {1,1,1,2}  
 OUTPUT: 2 
 
 **Solution 0**:  
 You can still use the similar solution(counting) in single number problem.
 
-    *Time Complexity*:O(n)  
+*Time Complexity*:O(n)  
 *Space Complexity*:O(n)  
 
 {% highlight java %}  
@@ -41,7 +41,7 @@ public int singleNumber(int[] A) {
 **Solution 1**:  
 A better solution need to make better use of 'three times'. In the problem single number i, we use XOR to remove the double appearance. So how to remove the triple appearance in this problem? The answer is MOD. With this key point, the solution is obvious.
 
-    *Time Complexity*:O(n)  
+*Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 
 {% highlight java %}  
