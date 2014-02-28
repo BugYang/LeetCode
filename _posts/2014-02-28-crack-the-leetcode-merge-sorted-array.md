@@ -19,7 +19,7 @@ OUTPUT: [1,3,5]
 **Solution 0**:  
 In this problem, you may find it difficult to sort arrays from the beginning since it needs lots of element movings. But if you sort arrays from the ending, the solution will be obvious and straightforward.
 
-    *Time Complexity*:O(n)  
+*Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
 
 {% highlight java %}  
