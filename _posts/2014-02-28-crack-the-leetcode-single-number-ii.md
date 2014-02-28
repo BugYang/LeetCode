@@ -16,9 +16,9 @@ INPUT: {1,1,1,2}
 OUTPUT: 2 
 
 **Solution 0**:  
-You can still use the similar solution in single number problem.
+You can still use the similar solution(counting) in single number problem.
 
-*Time Complexity*:O(n)  
+    *Time Complexity*:O(n)  
 *Space Complexity*:O(n)  
 
 {% highlight java %}  
@@ -39,33 +39,24 @@ public int singleNumber(int[] A) {
 {% endhighlight %}
 
 **Solution 1**:  
-Or you can use non-recursive method to solve it, which is more challenging. It is the common case that you have to use stack convert recursive method to iterative method. And also, in this problem, using one stack may incur false positive, so I will use two stack here.
+A better solution need to make better use of 'three times'. In the problem single number i, we use XOR to remove the double appearance. So how to remove the triple appearance in this problem? The answer is MOD. With this key point, the solution is obvious.
 
-*Time Complexity*:O(V)  
-*Space Complexity*:O(V)  
+    *Time Complexity*:O(n)  
+*Space Complexity*:O(1)  
 
 {% highlight java %}  
-public boolean isSymmetric(TreeNode root) {
-    if (root == null) {
-        return true;
-    }
-    Stack<TreeNode> lstack = new Stack<TreeNode>(), rstack = new Stack<TreeNode>();
-    lstack.push(root.left);
-    rstack.push(root.right);
-    while (!lstack.empty() && !rstack.empty()) {
-        TreeNode lnode = lstack.pop(), rnode = rstack.pop();
-        if (lnode != null && rnode != null) {
-            if (lnode.val != rnode.val) {
-                return false;
-            }
-            lstack.push(lnode.left);
-            rstack.push(rnode.right);
-            rstack.push(lnode.right);
-            lstack.push(rnode.left);
-        } else if (lnode != rnode) {
-            return false;
+public int singleNumber(int[] A) {
+    int result = 0;
+    int[] bits = new int[32];
+    for (int i : A) {
+        for (int j = 0; j < 32; j++) {
+            bits[j] += (result>>j & 1) + (i>>j & 1);
         }
     }
-    return true;
+
+    for (int i = 0; i < 32; i++) {
+        result += bits[i]%3 << i;
+    }
+    return result;
 }
 {% endhighlight %}
