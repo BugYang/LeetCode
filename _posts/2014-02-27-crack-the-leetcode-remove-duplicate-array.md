@@ -6,7 +6,7 @@ title: Crack the LeetCode - Remove Duplicates from Sorted Array
 {{ page.title }}
 ================
 
-<p class="meta">24 February 2014 - Shanghai </p>
+<p class="meta">27 February 2014 - Shanghai </p>
 
 **Problem**:  
 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this in place with constant memory.
