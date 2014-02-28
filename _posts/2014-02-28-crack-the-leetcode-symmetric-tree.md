@@ -44,34 +44,26 @@ Or you can use non-recursive method to solve it, which is more challenging. It i
 
 {% highlight java %}  
 public boolean isSymmetric(TreeNode root) {
+    if (root == null) {
+        return true;
+    }
     Stack<TreeNode> lstack = new Stack<TreeNode>(), rstack = new Stack<TreeNode>();
-    if (root && root.left) {
-        lstack.push(root.left);
-    }
-    if (root && root.right) {
-        rstack.push(root.right);
-    }
-    while (lstack.size() == rstack.size()) {
-        if (lstack.empty() && rstack.empty()) {
-            return true;
-        }
+    lstack.push(root.left);
+    rstack.push(root.right);
+    while (!lstack.empty() && !rstack.empty()) {
         TreeNode lnode = lstack.pop(), rnode = rstack.pop();
-        if (lnode.val != rnode.val) {
+        if (lnode != null && rnode != null) {
+            if (lnode.val != rnode.val) {
+                return false;
+            }
+            lstack.push(lnode.left);
+            rstack.push(rnode.right);
+            rstack.push(lnode.right);
+            lstack.push(rnode.left);
+        } else if (lnode != rnode) {
             return false;
         }
-        if (lnode.left) {
-            lstack.push(lnode.left);
-        }
-        if (rnode.right) {
-            rstack.push(rnode.right);
-        }
-        if (lnode.right) {
-            rstack.push(lnode.right);
-        }
-        if (rnode.left) {
-            lstack.push(rnode.left);
-        }
     }
-    return false;
+    return true;
 }
 {% endhighlight %}
