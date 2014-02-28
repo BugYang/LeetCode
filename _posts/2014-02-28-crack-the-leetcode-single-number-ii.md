@@ -52,11 +52,9 @@ public int singleNumber(int[] A) {
         for (int j = 0; j < 32; j++) {
             bits[j] += (result>>j & 1) + (i>>j & 1);
         }
-    }
-
-    for (int i = 0; i < 32; i++) {
         result += bits[i]%3 << i;
     }
+
     return result;
 }
 {% endhighlight %}
