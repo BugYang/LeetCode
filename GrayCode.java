@@ -39,3 +39,22 @@ public class Solution {
         }
         return result;
     }
+
+    public ArrayList<Integer> grayCode(int n) {
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.add(0);
+        int count = 1, t, t0, t1;
+        while (n-- > 0) {
+            for (int i = 0; i < count; i++) {
+                t = queue.remove();
+                t0 = t << 1 | (i%2 == 0 ? 0 : 1);
+                t1 = t << 1 | (i%2 == 0 ? 1 : 0);
+                queue.add(t0);
+                queue.add(t1);
+            }
+            count *= 2;
+        }
+
+        return new ArrayList<Integer>(queue);
+    }
+}
