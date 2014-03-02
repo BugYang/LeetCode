@@ -6,7 +6,7 @@ title: Crack the LeetCode - Binary Tree Level Order Traversal II
 {{ page.title }}
 ================
 
-<p class="meta">01 March 2014 - Shanghai </p>
+<p class="meta">02 March 2014 - Shanghai </p>
 
 **Problem**:  
 Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
