@@ -36,3 +36,26 @@ public void rotate(int[][] matrix) {
     }
 }
 {% endhighlight %}
+
+**Solution 1**:  
+Actually, you can avoid using another matrix if using some tricks. Notice that for any node, if you rotate it 4 times, you will be back to it. So we can select some starting node as bases, rotate the whole matrix and not use extra space. The only difficulty here is to figure out which points as bases.
+
+*Time Complexity*:O(n^2)  
+*Space Complexity*:O(1)  
+
+{% highlight java %}  
+public void rotate(int[][] matrix) {
+    for (int i = 0; i < matrix.length/2; i++) {
+        for (int j = i; j < matrix.length - i - 1; j++) {
+            int x = i, y = j, cur = matrix[x][y];
+            for (int k = 0; k < 4; k++) {
+                int t = matrix[y][matrix.length-1-x];
+                matrix[y][matrix.length-1-x] = cur;
+                cur = t;
+                int x1 = y, y1 = matrix.length-1-x;
+                x = x1; y = y1;
+            }
+        }
+    }
+}
+{% endhighlight %}
