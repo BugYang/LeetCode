@@ -62,3 +62,5 @@ public void sortColors(int[] A) {
 
 **NOTE**:  
 I find it really useful to solve problem using this method: first, you assume an intermediate case which owns all properties the result should own; second, you figure out how to extern this case one step further; third, you set the most basic case manually and repeat extending this case until you get the result, which is a solution, either iterative or recursive.
+
+And also, I learned that the key to solve a problem is to find an special viewpoints from which the things looks easy:-)
