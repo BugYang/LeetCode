@@ -17,4 +17,23 @@ public class Solution {
         }
         return result[m-1][n-1];
     }
+
+    public int minPathSum_DP_On(int[][] grid) {
+        int m = grid.length, n = grid[0].length;
+        int[] result = new int[n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 && j == 0) {
+                    result[j] = grid[i][j];
+                } else if (i == 0) {
+                    result[j] = result[j-1] + grid[i][j];
+                } else if (j == 0) {
+                    result[j] = result[j] + grid[i][j];
+                } else {
+                    result[j] = Math.min(result[j], result[j-1]) + grid[i][j];
+                }
+            }
+        }
+        return result[n-1];
+    }
 }
