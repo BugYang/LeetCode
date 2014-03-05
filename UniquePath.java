@@ -33,7 +33,7 @@ public class Solution {
         return result;
     }
 
-    public int uniquePaths_DP(int m, int n) {
+    public int uniquePaths_DP_Omn(int m, int n) {
         int[][] result = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -45,5 +45,15 @@ public class Solution {
             }
         }
         return result[m-1][n-1];
+    }
+
+    public int uniquePaths_DP_On(int m, int n) {
+        int[] result = new int[n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                result[j] = i * j == 0 ? 1 : result[j] + result[j-1];
+            }
+        }
+        return result[n-1];
     }
 }
