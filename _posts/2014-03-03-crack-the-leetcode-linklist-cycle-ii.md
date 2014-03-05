@@ -12,7 +12,7 @@ title: Crack the LeetCode - Linked List Cycle II
 Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 
 **Example**:    
-INPUT: {1,2,3,2}
+INPUT: {1,2,3,2}  
 OUTPUT: 2
 
 **Solution 0**:  
