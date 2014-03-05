@@ -35,3 +35,55 @@ public int uniquePaths(int m, int n) {
 }
 {% endhighlight %}
 
+**Solution 1**:  
+The recursive solution is also obvious, but if you simply write a recursive function without other optimizations, you may meet TLE because you need to calculate same sub-problems for many times. So you can use memorization to avoid duplicate recursion.
+
+*Time Complexity*:O(m+n)  
+*Space Complexity*:O(m+n)  
+
+{% highlight java %}  
+public int uniquePaths_recur(int m, int n) {
+    HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+    map.put(genKey(1,1), 1);
+    return uniquePathsHelper(m, n, map);
+}
+
+public int genKey(int m, int n) {
+    return m * 1000 + n;
+}
+
+public int uniquePathsHelper(int m, int n, HashMap<Integer, Integer> map) {
+    int key = genKey(m, n);
+    if (map.containsKey(key)) {
+        return map.get(key);
+    }
+    int result = 0;
+    result += m > 1 ? uniquePathsHelper(m-1, n, map) : 0;
+    result += n > 1 ? uniquePathsHelper(m, n-1, map) : 0;
+    map.put(key, result);
+    return result;
+}
+{% endhighlight %}
+
+
+**Solution 2**:  
+Or you can also use dynamic programming to solve this problem.
+
+*Time Complexity*:O(m+n)  
+*Space Complexity*:O(m*n) (it can be optimized to O(n))
+
+{% highlight java %}  
+public int uniquePaths_DP(int m, int n) {
+    int[][] result = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i * j == 0) {
+                    result[i][j] = 1;
+                } else {
+                    result[i][j] = result[i-1][j] + result[i][j-1];
+                }
+            }
+        }
+        return result[m-1][n-1];
+    }
+{% endhighlight %}
