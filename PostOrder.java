@@ -45,4 +45,38 @@ public class Solution {
         return result;
 
     }
+
+    public ArrayList<Integer> postorderTraversal_iter(TreeNode root) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        Stack<TreeNode> s = new Stack<TreeNode>();
+        TreeNode prev = null, cur;
+        if (root != null) {
+            s.push(root);
+        }
+        while (!s.empty()) {
+            cur = s.peek();
+            if (prev == null || cur == prev.left || cur == prev.right) {
+                if (cur.left != null) {
+                    s.push(cur.left);
+                } else if (cur.right != null) {
+                    s.push(cur.right);
+                } else {
+                    result.add(cur.val);
+                    s.pop();
+                }
+            } else if (prev == cur.left) {
+                if (cur.right != null) {
+                    s.push(cur.right);
+                } else {
+                    result.add(cur.val);
+                    s.pop();
+                }
+            } else if (prev == cur.right) {
+                result.add(cur.val);
+                s.pop();
+            }
+            prev = cur;
+        }
+        return result;
+    }
 }
