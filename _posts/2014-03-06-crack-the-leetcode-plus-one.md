@@ -6,7 +6,7 @@ title: Crack the LeetCode - Plus One
 {{ page.title }}
 ================
 
-<p class="meta">05 March 2014 - Shanghai </p>
+<p class="meta">06 March 2014 - Shanghai </p>
 
 **Problem**:  
 Given a non-negative number represented as an array of digits, plus one to the number. The digits are stored such that the most significant digit is at the head of the list.
