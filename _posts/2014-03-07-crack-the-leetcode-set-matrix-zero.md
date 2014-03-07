@@ -118,3 +118,6 @@ public void setZeroes_O1(int[][] matrix) {
     }
 }
 {% endhighlight %}
+
+**NOTE**  
+I failed to figure out the last solution. After much thinking, I conclude my failure as not to make best use of intermediate result since I didn't notice the column and row of 0 element can be made use of. And also, this conclusion is some kind of similar with the one in problem "populate the next right pointer".
