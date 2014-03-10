@@ -16,7 +16,7 @@ INPUT: [1,1,1,2,2,3]
 OUTPUT: [1,1,2,2,3],5
 
 **Solution 0**:  
-The solution is almost the same as the original problem, except that you need two variables to record last two elements in new array.
+The solution is almost the same as the original problem, except that you need to view last two elements in new array.
 
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
@@ -27,11 +27,9 @@ public int removeDuplicates(int[] A) {
         return A.length;
     }
 
-    int len = 2, lastlast = A[0], last = A[1];
+    int len = 2;
     for (int i = 2; i < A.length; i++) {
-        if (A[i] != lastlast) {
-            lastlast = last;
-            last = A[i];
+        if (A[i] != A[len-2]) {
             A[len++] = A[i];
         }
     }

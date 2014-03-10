@@ -16,7 +16,7 @@ INPUT: [1,1,2]
 OUTPUT: [1,2], 2
 
 **Solution 0**:  
-This problem is similar to the 'linked list' version. You can keep track of the new length and last viewed element. Whenever meeting a different element, you can move the new one and increment the new length.
+This problem is similar to the 'linked list' version. You can keep track of the new length (and you get last valid element by it). Whenever meeting a different element, you can move the new one and increment the new length.
 
 *Time Complexity*:O(n)  
 *Space Complexity*:O(1)  
@@ -27,11 +27,10 @@ public int removeDuplicates(int[] A) {
         return 0;
     }
 
-    int len = 1, last = A[0];
+    int len = 1;
     for (int i = 1; i < A.length; i++) {
-        if (A[i] != last) {
+        if (A[i] != A[len-1]) {
             A[len++] = A[i];
-            last = A[i];
         }
     }
 
