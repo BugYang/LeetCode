@@ -8,10 +8,10 @@ title: Crack the LeetCode - N-Queens II
 
 <p class="meta">10 March 2014 - Shanghai </p>
 
-**Problem**:  
+**Problem**:   
 Follow up for N-Queens problem. Now, instead outputting board configurations, return the total number of distinct solutions.
 
-**Example**:    
+**Example**:   
 INPUT: 1  
 OUTPUT: 1
 
