@@ -16,7 +16,7 @@ INPUT: 1
 OUTPUT: 1
 
 **Solution 0**:  
-I'm curious about why the most intuitive solution could pass the OJ...
+I'm curious about why the most intuitive solution could pass the OJ.
 
 *Time Complexity*:O(n^n)  
 *Space Complexity*:O(n)  
