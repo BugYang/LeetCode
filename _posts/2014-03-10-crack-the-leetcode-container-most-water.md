@@ -16,7 +16,11 @@ INPUT: {1,3,4,2}
 OUTPUT: 4
 
 **NOTE**:  
-Intuitively, you would use brute-force method to solve it, but you would suryly meet TLE. I failed to find better solution, so I googled the solution. Then I found there are two better solution. Both solutions base on the observation that the volume of container depend on the width and the minimum line, and if you know one of the lines, you know the upper bound of the minimum line. 
+Intuitively, you would use brute-force method to solve it, but you would suryly meet TLE. I failed to find better solution, so I googled the solution. Then I found there are two better solution. Both solutions base on the observation that the volume of container depend on the width and the minimum line, and if you know one of the lines, you know the upper bound of the minimum line.
+
+Here are two articles useful:  
+[http://blog.unieagle.net/2012/09/16/leetcode%E9%A2%98%E7%9B%AE%EF%BC%9Acontainer-with-most-water/](http://rafal.io/posts/leetcode-11-container-with-most-water.html)  
+[http://rafal.io/posts/leetcode-11-container-with-most-water.html](http://rafal.io/posts/leetcode-11-container-with-most-water.html)
 
 **Solution 0**:  
 The first one is to calculate the minimum possible index to reduce the searching space. The first one could pass the OJ before, but now it fails to do so.
