@@ -10,6 +10,18 @@
  * }
  */
 public class Solution {
+    public ListNode detectCycle(ListNode head) { 
+        Set set = new HashSet(); 
+        for (; head != null; head = head.next) 
+        { if (set.contains(head))
+            { 
+                return head; 
+            } 
+            set.add(head);
+        } 
+        return null;
+    }
+
     public ListNode detectCycle(ListNode head) {
         ListNode tortoise = head, hare = head;
         do {
@@ -30,3 +42,4 @@ public class Solution {
         return hare;
     }
 }
+
