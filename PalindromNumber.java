@@ -10,22 +10,17 @@ public class Solution {
         }
 
         for (int i = 0; i < len/2; i++) {
-            num = x;
-            for (int j = 0; j < i; j++) {
-                num /= 10;
-            }
-            int a = num % 10;
-
-            num = x;
-            for (int j = 0; j < len-1 - i; j++) {
-                num /= 10;
-            }
-            int b = num % 10;
-
-            if (a != b) {
+            if (getDigitAt(x, i) != getDigitAt(x, len-1-i)) {
                 return false;
             }
         }
         return true;
+    }
+
+    public int getDigitAt(int num, int idx) {
+        while (idx-- > 0) {
+            num /= 10;
+        }
+        return num % 10;
     }
 }
