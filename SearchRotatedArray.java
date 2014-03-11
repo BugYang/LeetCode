@@ -17,14 +17,14 @@ public class Solution {
             int mid = (begin + end)/2;
             if (A[mid] == target) {
                 return mid;
-            } else if (A[mid] < target) {
-                if (A[begin] <= target && A[begin] > A[mid]) {
+            } else if (A[begin] <= A[mid]) {
+                if (A[begin] <= target && target < A[mid]) {
                     end = mid;
                 } else {
                     begin = mid + 1;
                 }
             } else {
-                if (A[begin] > target && A[begin] <= A[mid]) {
+                if (A[mid] < target && target <= A[end]) {
                     begin = mid + 1;
                 } else {
                     end = mid;
