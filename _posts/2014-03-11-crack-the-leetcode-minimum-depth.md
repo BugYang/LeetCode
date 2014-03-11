@@ -34,3 +34,41 @@ public int minDepth(TreeNode root) {
     }
 }
 {% endhighlight %}
+
+**Solution 1**:  
+You can also use iterative level-order traversal to solve it.
+
+*Time Complexity*:O(V)  
+*Space Complexity*:O(V)  
+
+{% highlight java %}  
+public int minDepth(TreeNode root) {
+    if (root == null) {
+        return 0;
+    }
+
+    Queue<TreeNode> queue = new LinkedList<TreeNode>();
+    int level = 1, cnt = 1;
+    queue.add(root);
+    while (true) {
+        int new_cnt = 0;
+        for (int i = 0; i < cnt; i++) {
+            TreeNode node = queue.poll();
+            if (node.left == null && node.right == null) {
+                return level;
+            }
+            if (node.left != null) {
+                new_cnt++;
+                queue.add(node.left);
+            }
+            if (node.right != null) {
+                new_cnt++;
+                queue.add(node.right);
+            }
+        }
+        level++;
+        cnt = new_cnt;
+    }
+}
+{% endhighlight %}
+
