@@ -8,12 +8,29 @@
  */
 public class Solution {
     public void connect(TreeLinkNode root) {
+        Queue<TreeLinkNode> queue = new LinkedList<TreeLinkNode>();
+        if (root != null) {
+            queue.add(root);
+        }
+        while (queue.peek() != null) {
+            TreeLinkNode node = queue.poll();
+            connectNode(node);
+            if (node.left != null) {
+                queue.add(node.left);
+            }
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+        }
+    }
+
+    public void connectNode(TreeLinkNode root) {
         if (root == null || root.left == null && root.right == null) {
             return;
         }
 
         TreeLinkNode cur = root, next = null;
-        while (next == null) {
+        while (true) {
             if (cur.next == null) {
                 break;
             }
@@ -36,8 +53,5 @@ public class Solution {
                 root.left.next = root.right;
             }
         }
-
-        connect(root.left);
-        connect(root.right);
     }
 }
