@@ -6,7 +6,7 @@ title: Crack the LeetCode - Trapping Rain Water
 {{ page.title }}
 ================
 
-<p class="meta">11 March 2014 - Shanghai </p>
+<p class="meta">12 March 2014 - Shanghai </p>
 
 **Problem**:   
 Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
