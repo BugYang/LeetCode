@@ -16,4 +16,12 @@ public class Solution {
         }
         return false;
     }
+
+    public boolean canJump_On(int[] A) {
+        int max = A[0];
+        for (int i = 0; i <= max && i < A.length; i++) {
+            max = Math.max(max, i+A[i]);
+        }
+        return max >= A.length-1;
+    }
 }
