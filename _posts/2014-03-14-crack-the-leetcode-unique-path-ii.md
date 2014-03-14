@@ -38,3 +38,38 @@ public int uniquePathsWithObstacles(int[][] obstacleGrid) {
     return cnt[n-1];
 }
 {% endhighlight %}
+
+**Solution 1**:  
+Here is the recursive version.
+
+*Time Complexity*:O(m*n)  
+*Space Complexity*:O(m*n)  
+
+{% highlight java %}  
+public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+    Map<Integer, Integer> buf = new HashMap<Integer, Integer>();
+    int m = obstacleGrid.length, n = obstacleGrid[0].length;
+    return uniquePathHelper(obstacleGrid, m-1, n-1, buf);
+}
+
+public int getKey(int x, int y) {
+    return x*1000 + y;
+}
+
+public int uniquePathHelper(int[][] grid, int x, int y, Map<Integer, Integer> buf) {
+    int key = getKey(x, y);
+    if (!buf.containsKey(key)) {
+        int result = 0;
+        if (grid[x][y] == 1) {
+            result = 0;
+        } else if (x == 0 && y == 0) {
+            result = 1;
+        } else {
+            result += x == 0 ? 0 : uniquePathHelper(grid, x-1, y, buf);
+            result += y == 0 ? 0 : uniquePathHelper(grid, x, y-1, buf);
+        }
+        buf.put(key, result);
+    }
+    return buf.get(key);
+}
+{% endhighlight %}
