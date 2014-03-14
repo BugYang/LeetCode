@@ -40,3 +40,19 @@ public boolean canJumpHelper(int[] A, int cur, Map<Integer, Boolean> buf) {
     return false;
 }
 {% endhighlight %}
+
+**Solution 1**:  
+If you think this problem as how far could be reached from A[0], things become much easier. You can just traverse all places you can reach and see if you can go further. Finally, you can check whether you can reach A[length-1].
+
+*Time Complexity*:O(n)  
+*Space Complexity*:O(1)  
+
+{% highlight java %}  
+public boolean canJump(int[] A) {
+    int max = A[0];
+    for (int i = 0; i <= max && i < A.length; i++) {
+        max = Math.max(max, i+A[i]);
+    }
+    return max >= A.length-1;
+}
+{% endhighlight %}
