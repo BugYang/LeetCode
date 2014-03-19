@@ -16,7 +16,10 @@ INPUT:  [5,7,7,8,8,10], 8
 OUTPUT:  [3,4] 
 
 **Solution 0**:  
-This problem can be broken into two parts: find the left most target, find the right most target. So you can customize the standard binary search. Be careful about the array bounders!
+This problem can be broken into two parts: find the left most target, find the right most target. So you can customize the standard binary search. Be careful about the array bounders! 
+
+**NOTE**:  
+While coding this problem, I find it's much easy to implement binary search by return -1 only outside of the while loop!
 
 *Time Complexity*:O(log(n))  
 *Space Complexity*:O(1)  
