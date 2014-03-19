@@ -36,12 +36,14 @@ public int threeSumClosest(int[] num, int target) {
 }
 
 public int twoSumClosest(int target, int[] num, int begin, int end) {
-    int closest = num[begin] + num[end];
+    int result = num[begin] + num[end];
 
     while (begin < end) {
-        if (Math.abs(num[begin] + num[end]-target) < Math.abs(closest-target)) {
-            closest = num[begin] + num[end];
+        int closest = num[begin]+num[end];
+        if (Math.abs(closest-target) < Math.abs(result-target)) {
+            result = num[begin] + num[end];
         }
+
         if (closest < target) {
             begin++;
         } else if (closest > target) {
@@ -51,6 +53,6 @@ public int twoSumClosest(int target, int[] num, int begin, int end) {
         }
     }
 
-    return closest;
+    return result;
 }
 {% endhighlight %}
