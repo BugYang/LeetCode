@@ -6,7 +6,7 @@ title: Crack the LeetCode - Flatten Binary Tree to Linked List
 {{ page.title }}
 ================
 
-<p class="meta">18 March 2014 - Shanghai </p>
+<p class="meta">17 March 2014 - Shanghai </p>
 
 **Problem**:   
 Given a binary tree, flatten it to a linked list in-place.Given a binary tree, flatten it to a linked list in-place.
