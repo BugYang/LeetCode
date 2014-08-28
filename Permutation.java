@@ -15,7 +15,7 @@ public class Solution {
             return result;
         }
 
-        ArrayList <ArrayList<Integer>> subResult = permuteHelper(num, begin + 1, end);
+        ArrayList<ArrayList<Integer>> subResult = permuteHelper(num, begin + 1, end);
         for (ArrayList<Integer> list : subResult) {
             for (int i = 0; i <= end - begin; i++) {
                 ArrayList<Integer> p = new ArrayList<Integer>();
