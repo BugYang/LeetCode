@@ -1,32 +1,60 @@
+/**
+ * Definition for binary tree
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x;  }
+ * }
+ */
 public class Solution {
-    public String convert(String s, int nRows) {
-        if (nRows == 1)
-            return s;
-            
-        char[] str = s.toCharArray();
-        char[][] grid = new char[nRows][str.length];
-        
-        int x = 0, y = 0, dx = 1, dy = 0;
-        for (int i = 0; i < str.length; i++) {
-            grid[x][y] = str[i];
-            if (x + dx == nRows) {
-                dx = -1;
-                dy = 1;
-            } else if (x + dx < 0) {
-                dx = 1;
-                dy = 0;
-            }
-            
-            x += dx;
-            y += dy;
+    public ArrayList<ArrayList<Integer>> zigzagLevelOrder(TreeNode root) {
+        ArrayList<ArrayList<TreeNode>> rows = new ArrayList<ArrayList<TreeNode>>();
+        ArrayList<TreeNode> lastRow = new ArrayList<TreeNode>();
+        boolean evenRow = true;
+
+        if (root == null) {
+            return new ArrayList<ArrayList<Integer>>();
         }
-        
-        int w = 0;
-        for (int i = 0; i < nRows; i++)
-            for (int j = 0; j < str.length; j++)
-                if (grid[i][j] != 0)
-                    str[w++] = grid[i][j];
-                    
-        return new String(str);
+
+        lastRow.add(root);
+        rows.add(lastRow);
+        while (true) {
+            ArrayList<TreeNode> row = new ArrayList<TreeNode>();
+            for (int i = lastRow.size()-1; i >= 0; i--) {
+                TreeNode node = lastRow.get(i);
+                if (evenRow) {
+                    if (node.right != null) {
+                        row.add(node.right);
+                    }
+                    if (node.left != null) {
+                        row.add(node.left);
+                    }
+                } else {
+                    if (node.left != null) {
+                        row.add(node.left);
+                    }
+                    if (node.right != null) {
+                        row.add(node.right);
+                    }
+                }
+            }
+            if (row.size() == 0) {
+                break;
+            }
+            rows.add(row);
+            lastRow = row;
+            evenRow = !evenRow;
+        }
+
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        for (ArrayList<TreeNode> row : rows) {
+            ArrayList<Integer> nums = new ArrayList<Integer>();
+            for (TreeNode node : row) {
+                nums.add(node.val);
+            }
+            result.add(nums);
+        }
+        return result;
     }
 }
